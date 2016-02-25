@@ -1,1 +1,1 @@
-{"unitFiles":["build/app/app.component.spec.js","build/app/examples/search.component.spec.js","build/app/main.spec.js"]}
+{"unitFiles":[]}

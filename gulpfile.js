@@ -66,7 +66,8 @@ gulp.task('sass', ['clean'], function() {
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write())
-		.pipe(gulp.dest('./build/css'));
+		.pipe(gulp.dest('./build/css'))
+		.pipe(browserSync.stream());
 });
 gulp.task('sass:stream', function() {
 	return gulp
@@ -90,7 +91,7 @@ gulp.task('serve', ['dev'], function() {
                 '^/testing/app/(.*).html$ /build/app/$1.html',
                 //'^/.+.html(.*)$ - [L]',
                 //'^/src/(.*)$ - [L]',
-                //'^/assets/(.*)$ - [L]',
+                '^/assets/(.*)$ /build/assets/$',
                 //'^/i18n/(.*)$ - [L]',
                 '^/testing/(.*)$ - [L]',
                 '^/node_modules/(.*)$ - [L]',

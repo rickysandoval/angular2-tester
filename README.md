@@ -4,6 +4,9 @@
 
 This repository is intended for the playing with Angular 2
 
+started from:
+https://github.com/jhades/angular2-rxjs-single-atom-example
+
 ### How do I get set up? ###
 
 * Clone the repository into a local folder

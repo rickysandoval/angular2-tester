@@ -1,9 +1,0 @@
-<div>
-	<form (ngSubmit)="runSearch()" #searchForm="ngForm">
-		<input type="text" [(ngModel)]="searchString" placeholder="Enter Search" >
-		<button type="submit">Submit</button>
-	</form>
-	<div *ngFor="#part of searchResults">
-		<div>{{part.mpn}}</div>
-	</div>
-</div>
