@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base href="/">
+	<meta charset="UTF-8">
+	<title>Verical.com</title>
+
+	<link rel="stylesheet" type="text/css" href="build/css/main.css">
+	<script type="text/javascript" src="build/lib/vendor.js"></script>
+	<script>
+		System.config({
+			map: {
+				app: 'build/app'
+			},
+			packages: {        
+				'app': {
+					format: 'register',
+					defaultExtension: 'js'
+				}
+			}
+	    });
+	    System.import('app/main')
+	    	.then(null, console.error.bind(console));
+	</script>
+</head>
+<body>
+	<my-app></my-app>
+</body>
+</html>

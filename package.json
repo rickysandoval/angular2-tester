@@ -1,0 +1,36 @@
+{
+  "name": "Angular2 Tester",
+  "version": "0.1.0",
+  "description": "Repo to test angular2",
+  "scripts": {
+    "postinstall": "npm run typings install",
+    "typings": "typings"
+  },
+  "repository": "https://github.com/rickysandoval/angular2-tester.git",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "connect-modrewrite": "^0.8.5",
+    "del": "^2.2.0",
+    "glob": "^7.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.11.0",
+    "jasmine-core": "^2.4.1",
+    "path": "^0.12.7",
+    "systemjs": "^0.19.22",
+    "typescript": "^1.7.5",
+    "typings": "^0.6.8"
+  },
+  "dependencies": {
+    "angular2": "^2.0.0-beta.7",
+    "es6-promise": "^3.1.2",
+    "es6-shim": "^0.33.13",
+    "reflect-metadata": "^0.1.2",
+    "rxjs": "^5.0.0-beta.2",
+    "zone.js": "^0.5.15"
+  }
+}

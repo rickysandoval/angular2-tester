@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Verical Unit testing</title>
+	<link rel="stylesheet" type="text/css" href="../node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
+
+	<script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine.js"></script>
+	<script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js"></script>
+	<script src="../node_modules/jasmine-core/lib/jasmine-core/boot.js"></script>
+
+</head>
+<body>
+	<script src="../node_modules/angular2/bundles/angular2-polyfills.js"></script>
+	<script src="../node_modules/systemjs/dist/system.src.js"></script>
+	<script src="../node_modules/rxjs/bundles/Rx.js"></script>
+	<script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+	<script src="../node_modules/angular2/bundles/testing.dev.js"></script>
+	<script src="../node_modules/angular2/bundles/router.dev.js"></script>
+	<script src="../node_modules/angular2/bundles/http.dev.js"></script>
+
+
+	<script>
+	    // #2. Configure SystemJS to use the .js extension
+	    //     for imports from the app folder
+	    System.config({
+	      packages: {
+	        '../build/app': {defaultExtension: 'js'}
+	      }
+	    });
+
+	   	loadJSON(function(response) {
+	   		var testFiles = JSON.parse(response).unitFiles;
+	   		loadTests(testFiles);
+	   	});
+
+	    function loadTests(testFiles){
+	  
+	    	Promise.all(testFiles.map(function(filepath) {
+	    		return System.import('../' + filepath);
+	    	}))
+	    		.then(window.onload)
+	     		.catch(console.error.bind(console));
+	    }
+
+	    function loadJSON(callback) {
+	     	var xobj = new XMLHttpRequest();
+	     		xobj.overrideMimeType("application/json");
+
+	     	xobj.open('GET', 'unit-test-files.js');
+	     	xobj.onreadystatechange = function() {
+	     		if (xobj.readyState == 4 && xobj.status == 200) {
+	     			callback(xobj.responseText);
+	     		}
+	     	}
+	     	xobj.send(null);
+	     }
+ 	</script>
+</body>
+</html>
